@@ -1,0 +1,65 @@
+{
+  "name": "react19-starter",
+  "version": "1.0.0",
+  "description": "react19 starter with ssr on AWS",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "dev": "node server",
+    "serve": "cd dist/client && python -m http.server",
+    "build": "tsc && vite build",
+    "build:ssr": "npm run build:client && npm run build:server",
+    "build:client": "vite build --mode development --ssrManifest --outDir dist/client",
+    "build:server": "vite build --ssr src/server.tsx --outDir dist/server -c vite.server.ts",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/humeniukd/react19-starter.git"
+  },
+  "keywords": [
+    "react19"
+  ],
+  "author": "Dmytro Humeniuk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/humeniukd/rec/issues"
+  },
+  "homepage": "https://github.com/humeniukd/rec#readme",
+  "dependencies": {
+    "@headlessui/react": "^2.1.1",
+    "clsx": "^2.1.1",
+    "react": "19.0.0-rc-f38c22b244-20240704",
+    "react-dom": "19.0.0-rc-f38c22b244-20240704",
+    "react-router-dom": "^6.23.1"
+  },
+  "devDependencies": {
+    "@headlessui/tailwindcss": "^0.2.0",
+    "@tailwindcss/forms": "^0.5.7",
+    "@types/aws-lambda": "^8.10.140",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.10",
+    "@types/react": "npm:types-react@rc",
+    "@types/react-dom": "npm:types-react-dom@rc",
+    "@typescript-eslint/eslint-plugin": "^7.15.0",
+    "@typescript-eslint/parser": "^7.15.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.19",
+    "babel-plugin-react-compiler": "^0.0.0-experimental-696af53-20240625",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.34.3",
+    "eslint-plugin-react-compiler": "^0.0.0-experimental-0998c1e-20240625",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "express": "^4.19.2",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.6"
+  },
+  "overrides": {
+    "@types/react": "npm:types-react@rc",
+    "@types/react-dom": "npm:types-react-dom@rc"
+  }
+}
